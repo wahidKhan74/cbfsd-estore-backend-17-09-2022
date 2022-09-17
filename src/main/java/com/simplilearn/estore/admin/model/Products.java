@@ -1,0 +1,119 @@
+package com.simplilearn.estore.admin.model;
+
+import java.util.Date;
+import java.util.List;
+
+public class Products {
+
+	private int productId;
+	private String productTitle;
+	private String productDescription;
+	private String productCode;
+	private List<String> images;
+	private int thumnailImage;
+	private int price;	
+	private Date addedOn;
+	private int rating;
+	
+	
+	// default constructor
+	public Products() {
+		super();
+	}
+
+	// parameterized constructor
+	public Products(int productId, String productTitle, String productDescription, String productCode,
+			List<String> images, int thumnailImage, int price, Date addedOn, int rating) {
+		super();
+		this.productId = productId;
+		this.productTitle = productTitle;
+		this.productDescription = productDescription;
+		this.productCode = productCode;
+		this.images = images;
+		this.thumnailImage = thumnailImage;
+		this.price = price;
+		this.addedOn = addedOn;
+		this.rating = rating;
+	}
+
+	// getter & setter methods
+	public int getProductId() {
+		return productId;
+	}
+
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+
+	public String getProductTitle() {
+		return productTitle;
+	}
+
+	public void setProductTitle(String productTitle) {
+		this.productTitle = productTitle;
+	}
+
+	public String getProductDescription() {
+		return productDescription;
+	}
+
+	public void setProductDescription(String productDescription) {
+		this.productDescription = productDescription;
+	}
+
+	public String getProductCode() {
+		return productCode;
+	}
+
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+	}
+
+	public List<String> getImages() {
+		return images;
+	}
+
+	public void setImages(List<String> images) {
+		this.images = images;
+	}
+
+	public int getThumnailImage() {
+		return thumnailImage;
+	}
+
+	public void setThumnailImage(int thumnailImage) {
+		this.thumnailImage = thumnailImage;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public Date getAddedOn() {
+		return addedOn;
+	}
+
+	public void setAddedOn(Date addedOn) {
+		this.addedOn = addedOn;
+	}
+
+	public int getRating() {
+		return rating;
+	}
+
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
+
+	// override to string 
+	@Override
+	public String toString() {
+		return "Products [productId=" + productId + ", productTitle=" + productTitle + ", productDescription="
+				+ productDescription + ", productCode=" + productCode + ", images=" + images + ", thumnailImage="
+				+ thumnailImage + ", price=" + price + ", addedOn=" + addedOn + ", rating=" + rating + "]";
+	}
+}
