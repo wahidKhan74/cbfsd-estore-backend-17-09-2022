@@ -22,7 +22,7 @@ public class DBUtility {
 	}
 
 	// Register the Driver class
-	public DBUtility() {
+	private DBUtility() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("' " + DB_SCHEMA + " ' " + " Driver Loader.");
