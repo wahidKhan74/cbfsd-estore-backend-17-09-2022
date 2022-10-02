@@ -26,6 +26,7 @@ public class DBUtility {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("' " + DB_SCHEMA + " ' " + " Driver Loader.");
+			init();
 		} catch (Exception e) {
 			System.out.println("Oops! something went wrong" + e.getMessage());
 		}
@@ -35,6 +36,7 @@ public class DBUtility {
 	public void init() {
 		try {
 			connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+			statement = connection.createStatement();
 			System.out.println("' " + DB_SCHEMA + " ' " + "Connection established.");
 		} catch (Exception e) {
 			System.out.println("Oops! something went wrong" + e.getMessage());
