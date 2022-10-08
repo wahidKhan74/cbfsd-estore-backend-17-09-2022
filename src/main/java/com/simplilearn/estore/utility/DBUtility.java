@@ -9,8 +9,8 @@ public class DBUtility {
 
 	private final String DB_SCHEMA = "ecommerce_db";
 	private final String DB_URL = "jdbc:mysql://localhost:3306/" + DB_SCHEMA;
-	private final String DB_USERNAME = "root";
-	private final String DB_PASSWORD = "root";
+	private final String DB_USERNAME = "devuser";
+	private final String DB_PASSWORD = "DevUser!74";
 
 	private Connection connection = null;
 	private Statement statement = null;

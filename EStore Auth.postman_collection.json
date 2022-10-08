@@ -1,0 +1,112 @@
+{
+	"id": "e1ed48b4-0701-0e6e-96a5-2bf7398723f8",
+	"name": "EStore Auth",
+	"description": "",
+	"order": [
+		"138873b2-97f2-2de8-3222-c17f327b5d41",
+		"db4145d5-da2f-32b7-7ded-738afe5cea6d"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1665242218704,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "138873b2-97f2-2de8-3222-c17f327b5d41",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8090/cbfsd-estore-backend-17-09-2022/signin?email=wk_admin@simplilearn.com&password=wk_simpli@123",
+			"queryParams": [
+				{
+					"key": "email",
+					"value": "wk_admin@simplilearn.com",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "wk_simpli@123",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "email",
+					"value": "admin",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1665244329044,
+			"name": "Login to Estore Admin",
+			"description": "",
+			"collectionId": "e1ed48b4-0701-0e6e-96a5-2bf7398723f8",
+			"responses": []
+		},
+		{
+			"id": "db4145d5-da2f-32b7-7ded-738afe5cea6d",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8090/cbfsd-estore-backend-17-09-2022/signup?email=admin_kh@simplilearn.com&password=khsimpli@123&fullName=KH admin",
+			"queryParams": [
+				{
+					"key": "email",
+					"value": "admin_kh@simplilearn.com",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "khsimpli@123",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "fullName",
+					"value": "KH admin",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1665244911946,
+			"name": "SignUp to Estore Admin",
+			"description": "",
+			"collectionId": "e1ed48b4-0701-0e6e-96a5-2bf7398723f8",
+			"responses": []
+		}
+	]
+}
