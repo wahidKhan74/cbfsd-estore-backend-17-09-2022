@@ -17,7 +17,7 @@ public class ProductsDAO implements DAO<Products>{
 	public List<Products> getAll() {
 		List<Products> productsList = new ArrayList<Products>();
 		try {
-			String sql = "select * from products";
+			String sql = "select * from PRODUCTS";
 			ResultSet set = db.executeQuery(sql);
 			while(set.next()) {
 				Products product = new Products();
@@ -28,7 +28,7 @@ public class ProductsDAO implements DAO<Products>{
 				product.setPrice(set.getInt("price"));
 				product.setProductCode(set.getString("productCode"));
 				product.setRating(set.getInt("rating"));
-				product.setThumnailImage(set.getInt("tumnailImage"));
+				product.setThumbnailImage(set.getInt("thumbnailImage"));
 				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 				Date addedOnDate = format.parse(set.getString("addedOn"));
 				product.setAddedOn(addedOnDate);
@@ -44,7 +44,7 @@ public class ProductsDAO implements DAO<Products>{
 	public Products getOne(long id) {
 		Products product = new Products();
 		try {
-			String sql = "select * from products where productId = " + id;
+			String sql = "select * from PRODUCTS where productId = " + id;
 			ResultSet set = db.executeQuery(sql);
 			if (set.next()) {
 				//set /map result set to object
@@ -55,7 +55,7 @@ public class ProductsDAO implements DAO<Products>{
 				product.setPrice(set.getInt("price"));
 				product.setProductCode(set.getString("productCode"));
 				product.setRating(set.getInt("rating"));
-				product.setThumnailImage(set.getInt("tumnailImage"));
+				product.setThumbnailImage(set.getInt("tumnailImage"));
 				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 				Date addedOnDate = format.parse(set.getString("addedOn"));
 				product.setAddedOn(addedOnDate);
@@ -83,26 +83,26 @@ public class ProductsDAO implements DAO<Products>{
 		try {
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			String addedOnDate = format.format(obj.getAddedOn());
-			String sql = "update products set productTitle = '" + obj.getProductTitle() + "', productDescription = '"
-					+ obj.getProductDescription() + ", price = '" + obj.getPrice()
-					+ "', rating = " + obj.getRating() + " , addedOn = '" + addedOnDate + "' where categoryId = "
+			String sql = "update PRODUCTS set productTitle = '" + obj.getProductTitle() + "', productDescription = '"
+					+ obj.getProductDescription() + "', price = " + obj.getPrice()
+					+ ", rating = " + obj.getRating() + " , addedOn = '" + addedOnDate + "' where productId = "
 					+ obj.getProductId();
 			String message = (db.executeUpdate(sql) > 0) ? "Products Updated successfully"
 					: "Unable to update products";
 			System.out.println(message);
 		} catch (Exception e) {
-			System.out.println("Exception is: " + e);
+			throw new RuntimeException("Exception is: " + e);
 		}
 		
 	}
 
 	public void delete(long id) {
 		try {
-			String sql = "delete from products where productId = " + id;
+			String sql = "delete from PRODUCTS where productId = " + id;
 			String message = (db.executeUpdate(sql) > 0) ? "Products is deleted" : "Product cannot be deleted";
 			System.out.println(message);
 		} catch (Exception e) {
-			System.out.println("Exception is: " + e);
+			throw new RuntimeException("Exception is: " + e);
 		}
 		
 	}

@@ -1,0 +1,473 @@
+{
+	"id": "1930678e-b085-32e0-fc2f-dc7a8e5d203c",
+	"name": "EStore Products",
+	"description": "",
+	"order": [
+		"85d1eda3-0cd5-67b0-91a9-1f569827d4cf",
+		"267b2658-62a2-89ab-9df8-888fd48e67bd",
+		"34ff67fa-979b-0c0e-e665-e1311c67c208",
+		"f275757f-5a93-a390-e9eb-a92e74d2b62c",
+		"b0597e00-aee7-2f26-21c4-dd3cf6ff6fca"
+	],
+	"folders": [
+		{
+			"name": "Categories",
+			"description": "",
+			"collectionId": "1930678e-b085-32e0-fc2f-dc7a8e5d203c",
+			"order": [
+				"7085838f-6e7e-e0c3-f4e7-591f6bb295b3",
+				"91632a2d-1fa3-0493-1169-9d932b93772e",
+				"9d41c5a6-f5a7-f07d-96f5-48e10e28eff9",
+				"03f155b1-6086-480c-4eb1-c6efa33c1d23",
+				"450a487e-d4db-b387-b205-903f07aee927"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"id": "db5b4f19-b5a9-8f60-e403-42401838ad06"
+		}
+	],
+	"folders_order": [
+		"db5b4f19-b5a9-8f60-e403-42401838ad06"
+	],
+	"timestamp": 1665246988853,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "03f155b1-6086-480c-4eb1-c6efa33c1d23",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8090/cbfsd-estore-backend-17-09-2022/categories?categoryName=Womens Fashion&categoryDescription=All clothing items for womens, Tshirt, Jean, Bags etc.&catgeoryImageUrl=http://localhost:4200/assets/cat3.png&addedOn=2022-10-09 14:59:19&active=1&categoryId=3",
+			"queryParams": [
+				{
+					"key": "categoryName",
+					"value": "Womens Fashion",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "categoryDescription",
+					"value": "All clothing items for womens, Tshirt, Jean, Bags etc.",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "catgeoryImageUrl",
+					"value": "http://localhost:4200/assets/cat3.png",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "addedOn",
+					"value": "2022-10-09 14:59:19",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "active",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "categoryId",
+					"value": "3",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "PUT",
+			"collectionId": "1930678e-b085-32e0-fc2f-dc7a8e5d203c",
+			"data": null,
+			"dataMode": "params",
+			"name": "Update Category ",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1665331822527,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "db5b4f19-b5a9-8f60-e403-42401838ad06"
+		},
+		{
+			"id": "267b2658-62a2-89ab-9df8-888fd48e67bd",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8090/cbfsd-estore-backend-17-09-2022/products?productTitle=Dell SLIM book DE111Z model&productDescription=DELL Slim Laptop&price=5454&rating=4&productCode=DELL2345",
+			"queryParams": [
+				{
+					"key": "productTitle",
+					"value": "Dell SLIM book DE111Z model",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "productDescription",
+					"value": "DELL Slim Laptop",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "price",
+					"value": "5454",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "rating",
+					"value": "4",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "productCode",
+					"value": "DELL2345",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1665327586998,
+			"name": "Add Product",
+			"description": "",
+			"collectionId": "1930678e-b085-32e0-fc2f-dc7a8e5d203c",
+			"responses": []
+		},
+		{
+			"id": "34ff67fa-979b-0c0e-e665-e1311c67c208",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8090/cbfsd-estore-backend-17-09-2022/products?id=1",
+			"queryParams": [
+				{
+					"key": "id",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1665328830979,
+			"name": "Get One Product",
+			"description": "",
+			"collectionId": "1930678e-b085-32e0-fc2f-dc7a8e5d203c",
+			"responses": []
+		},
+		{
+			"id": "450a487e-d4db-b387-b205-903f07aee927",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8090/cbfsd-estore-backend-17-09-2022/categories?id=4",
+			"queryParams": [
+				{
+					"key": "id",
+					"value": "4",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "DELETE",
+			"collectionId": "1930678e-b085-32e0-fc2f-dc7a8e5d203c",
+			"data": null,
+			"dataMode": "params",
+			"name": "Delete Category",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1665331892093,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "db5b4f19-b5a9-8f60-e403-42401838ad06"
+		},
+		{
+			"id": "7085838f-6e7e-e0c3-f4e7-591f6bb295b3",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8090/cbfsd-estore-backend-17-09-2022/categories?categoryName=Electronic and Appliances&categoryDescription=All electronic appliances including TV ,Speakers, Cameras,Gaming Console, Headphones etc.&catgeoryImageUrl=http://localhost:4200/assets/cat1.png&addedOn=2022-10-09 14:59:19&active=1",
+			"queryParams": [
+				{
+					"key": "categoryName",
+					"value": "Electronic and Appliances",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "categoryDescription",
+					"value": "All electronic appliances including TV ,Speakers, Cameras,Gaming Console, Headphones etc.",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "catgeoryImageUrl",
+					"value": "http://localhost:4200/assets/cat1.png",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "addedOn",
+					"value": "2022-10-09 14:59:19",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "active",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "1930678e-b085-32e0-fc2f-dc7a8e5d203c",
+			"data": null,
+			"dataMode": "params",
+			"name": "Create a Category",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1665331165600,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "db5b4f19-b5a9-8f60-e403-42401838ad06"
+		},
+		{
+			"id": "85d1eda3-0cd5-67b0-91a9-1f569827d4cf",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8090/cbfsd-estore-backend-17-09-2022/products",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "1930678e-b085-32e0-fc2f-dc7a8e5d203c",
+			"data": null,
+			"dataMode": "params",
+			"name": "Get all products",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1665327987954,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "91632a2d-1fa3-0493-1169-9d932b93772e",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8090/cbfsd-estore-backend-17-09-2022/categories",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "1930678e-b085-32e0-fc2f-dc7a8e5d203c",
+			"data": null,
+			"dataMode": "params",
+			"name": "Get All Categories",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1665331452235,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "db5b4f19-b5a9-8f60-e403-42401838ad06"
+		},
+		{
+			"id": "9d41c5a6-f5a7-f07d-96f5-48e10e28eff9",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8090/cbfsd-estore-backend-17-09-2022/categories?id=1",
+			"queryParams": [
+				{
+					"key": "id",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "1930678e-b085-32e0-fc2f-dc7a8e5d203c",
+			"data": null,
+			"dataMode": "params",
+			"name": "Get One Categories",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1665331563164,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "db5b4f19-b5a9-8f60-e403-42401838ad06"
+		},
+		{
+			"id": "b0597e00-aee7-2f26-21c4-dd3cf6ff6fca",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8090/cbfsd-estore-backend-17-09-2022/products?id=2",
+			"queryParams": [
+				{
+					"key": "id",
+					"value": "2",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "DELETE",
+			"collectionId": "1930678e-b085-32e0-fc2f-dc7a8e5d203c",
+			"data": null,
+			"dataMode": "params",
+			"name": "Delete Product",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1665328947592,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "f275757f-5a93-a390-e9eb-a92e74d2b62c",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8090/cbfsd-estore-backend-17-09-2022/products?productTitle=2020 Apple MacBook Air Laptop: Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver&productDescription=System on a Chip (SoC), Apple M1 chip,8-core CPU with 4 performance cores and 4 efficiency cores, Up to 8-core GPU, 16-core Neural Engine&price=8940&rating=5&productCode=APL2020&productId=1&thumbnailImage=1&addedOn=2022-10-09 14:59:19",
+			"queryParams": [
+				{
+					"key": "productTitle",
+					"value": "2020 Apple MacBook Air Laptop: Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "productDescription",
+					"value": "System on a Chip (SoC), Apple M1 chip,8-core CPU with 4 performance cores and 4 efficiency cores, Up to 8-core GPU, 16-core Neural Engine",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "price",
+					"value": "8940",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "rating",
+					"value": "5",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "productCode",
+					"value": "APL2020",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "productId",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "thumbnailImage",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "addedOn",
+					"value": "2022-10-09 14:59:19",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "PUT",
+			"collectionId": "1930678e-b085-32e0-fc2f-dc7a8e5d203c",
+			"data": null,
+			"dataMode": "params",
+			"name": "Update Product",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1665328725413,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}

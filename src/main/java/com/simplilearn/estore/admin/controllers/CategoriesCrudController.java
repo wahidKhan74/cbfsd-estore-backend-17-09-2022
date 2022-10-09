@@ -14,34 +14,33 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
-import com.simplilearn.estore.admin.dao.AdminsDAO;
-import com.simplilearn.estore.admin.dao.ProductsDAO;
+import com.simplilearn.estore.admin.dao.CategoriesDAO;
 import com.simplilearn.estore.admin.dto.ResponseDTO;
-import com.simplilearn.estore.admin.model.Admins;
-import com.simplilearn.estore.admin.model.Products;
+import com.simplilearn.estore.admin.model.Categories;
 
-@WebServlet("/products")
-public class ProductCrudController extends HttpServlet {
+@WebServlet("/categories")
+public class CategoriesCrudController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	// map products dao
-	ProductsDAO productDAO = new ProductsDAO();
+	CategoriesDAO categoriesDAO = new CategoriesDAO();
 
+	/**
+	 * Get All OR get One Categories.
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		String id = request.getParameter("id");
-		// map admins object list
-		List<Products> productList = new ArrayList<Products>();
+		List<Categories> categoriesList = new ArrayList<Categories>();
 
 		if (id != null) {
-			Products product = productDAO.getOne(Long.parseLong(id));
-			productList.add(product);
+			Categories category = categoriesDAO.getOne(Long.parseLong(id));
+			categoriesList.add(category);
 		} else {
-			productList = productDAO.getAll();
+			categoriesList = categoriesDAO.getAll();
 		}
-		String jsonResponse = new Gson().toJson(productList);
+		String jsonResponse = new Gson().toJson(categoriesList);
 		PrintWriter out = response.getWriter();
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
@@ -49,30 +48,32 @@ public class ProductCrudController extends HttpServlet {
 		out.flush();
 	}
 
-	// create a product
+	/**
+	 * Create a Category.
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		// create repones data
 		ResponseDTO dto = new ResponseDTO();
-		try {
-			// map product object fields with request parameters
-			Products product = new Products();
-			
-			product.setProductTitle(request.getParameter("productTitle"));
-			product.setProductDescription(request.getParameter("productDescription"));
-			product.setPrice(Integer.parseInt(request.getParameter("price")));
-			product.setProductCode(request.getParameter("productCode"));
-			product.setRating(Integer.parseInt(request.getParameter("rating")));
-//			product.setThumnailImage(Integer.parseInt(request.getParameter("tumnailImage")));
 
-			// create product
-			productDAO.save(product);
-			dto.setMessage("Product is added successfully!");
+		try {
+			Categories category = new Categories();
+			category.setCategoryName(request.getParameter("categoryName"));
+			category.setCategoryDescription(request.getParameter("categoryDescription"));
+			category.setActive(Integer.parseInt(request.getParameter("active")));
+			category.setCategoryImageUrl(request.getParameter("catgeoryImageUrl"));
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			Date addedOnDate = format.parse(request.getParameter("addedOn"));
+			category.setAddedOn(addedOnDate);
+			
+			categoriesDAO.save(category);
+			dto.setMessage("Categrory is created successfully!");
 		} catch (Exception e) {
-			dto.setMessage("Failed add product data");
+			dto.setMessage("Failed create categrory data");
 			dto.setError(e.toString());
 		}
-
+		
 		String jsonResponse = new Gson().toJson(dto);
 		PrintWriter out = response.getWriter();
 		response.setContentType("application/json");
@@ -81,32 +82,33 @@ public class ProductCrudController extends HttpServlet {
 		out.flush();
 	}
 	
+	/**
+	 * Update a Category.
+	 */
 	protected void doPut(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		// create repones data
 		ResponseDTO dto = new ResponseDTO();
+
 		try {
-			// map product object fields with request parameters
-			Products product = new Products();
-			
-			product.setProductId(Integer.parseInt(request.getParameter("productId")));
-			product.setProductTitle(request.getParameter("productTitle"));
-			product.setProductDescription(request.getParameter("productDescription"));
-			product.setPrice(Integer.parseInt(request.getParameter("price")));
-			product.setProductCode(request.getParameter("productCode"));
-			product.setRating(Integer.parseInt(request.getParameter("rating")));
-			product.setThumbnailImage(Integer.parseInt(request.getParameter("thumbnailImage")));
+			Categories category = new Categories();
+			category.setCategoryId(Integer.parseInt(request.getParameter("categoryId")));
+			category.setCategoryName(request.getParameter("categoryName"));
+			category.setCategoryDescription(request.getParameter("categoryDescription"));
+			category.setCategoryImageUrl(request.getParameter("catgeoryImageUrl"));
+			category.setActive(Integer.parseInt(request.getParameter("active")));
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			Date addedOnDate = format.parse(request.getParameter("addedOn"));
-			product.setAddedOn(addedOnDate);
-			// update product
-			productDAO.update(product);
-			dto.setMessage("Product is updated successfully!");
+			category.setAddedOn(addedOnDate);
+			
+			categoriesDAO.update(category);
+			dto.setMessage("Categrory is updated successfully!");
 		} catch (Exception e) {
-			dto.setMessage("Failed update product data");
+			dto.setMessage("Failed updated categrory data");
 			dto.setError(e.toString());
 		}
-
+		
 		String jsonResponse = new Gson().toJson(dto);
 		PrintWriter out = response.getWriter();
 		response.setContentType("application/json");
@@ -114,7 +116,10 @@ public class ProductCrudController extends HttpServlet {
 		out.print(jsonResponse);
 		out.flush();
 	}
-
+	
+	/**
+	 * Delete a category
+	 */
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
@@ -123,10 +128,10 @@ public class ProductCrudController extends HttpServlet {
 		ResponseDTO dto = new ResponseDTO();
 
 		try {
-			productDAO.delete(Integer.parseInt(id));
-			dto.setMessage("Product is deleted successfully!");
+			categoriesDAO.delete(Integer.parseInt(id));
+			dto.setMessage("Category is deleted successfully!");
 		} catch (Exception e) {
-			dto.setMessage("Failed deletion of a product");
+			dto.setMessage("Failed deletion of a category");
 			dto.setError(e.toString());
 		}
 

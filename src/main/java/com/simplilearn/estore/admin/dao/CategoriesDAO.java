@@ -17,7 +17,7 @@ public class CategoriesDAO implements DAO<Categories>{
 	public List<Categories> getAll() {
 		List<Categories> categoriesList = new ArrayList<Categories>();
 		try {
-			String sql = "select * from categories";
+			String sql = "select * from CATEGORIES";
 			ResultSet set = db.executeQuery(sql);
 			while(set.next()) {
 				Categories category = new Categories();
@@ -25,8 +25,9 @@ public class CategoriesDAO implements DAO<Categories>{
 				category.setCategoryId(set.getInt("categoryId"));
 				category.setCategoryName(set.getString("categoryName"));
 				category.setCategoryDescription(set.getString("categoryDescription"));
-				category.setCategoryImageUrl(set.getString(0));
-				SimpleDateFormat format = new SimpleDateFormat("YYYY-MM-DD");
+				category.setCategoryImageUrl(set.getString("categoryImageUrl"));
+				category.setActive(set.getInt("active"));
+				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 				Date addedOnDate = format.parse(set.getString("addedOn"));
 				category.setAddedOn(addedOnDate);
 				//add category into categoriesList
@@ -41,15 +42,16 @@ public class CategoriesDAO implements DAO<Categories>{
 	public Categories getOne(long id) {
 		Categories category = new Categories();
 		try {
-			String sql = "select * from categories where categoryId = " + id;
+			String sql = "select * from CATEGORIES where categoryId = " + id;
 			ResultSet set = db.executeQuery(sql);
 			if (set.next()) {
 				//set /map result set to object
 				category.setCategoryId(set.getInt("categoryId"));
 				category.setCategoryName(set.getString("categoryName"));
 				category.setCategoryDescription(set.getString("categoryDescription"));
-				category.setCategoryImageUrl(set.getString(0));
-				SimpleDateFormat format = new SimpleDateFormat("YYYY-MM-DD");
+				category.setCategoryImageUrl(set.getString("categoryImageUrl"));
+				category.setActive(set.getInt("active"));
+				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 				Date addedOnDate = format.parse(set.getString("addedOn"));
 				category.setAddedOn(addedOnDate);
 			}
@@ -61,10 +63,10 @@ public class CategoriesDAO implements DAO<Categories>{
 
 	public void save(Categories obj) {
 		try {
-			SimpleDateFormat format = new SimpleDateFormat("YYYY-MM-DD");
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			String addedOnDate = format.format(obj.getAddedOn());
-			String sql = "insert into categories values(null, '" + obj.getCategoryName() + "', '"
-					+ obj.getCategoryDescription() + ", '" + obj.getCategoryImageUrl() + "', " + obj.getActive()
+			String sql = "insert into CATEGORIES(categoryName,categoryDescription,categoryImageUrl,active,addedOn) values('" + obj.getCategoryName() + "', '"
+					+ obj.getCategoryDescription() + "', '" + obj.getCategoryImageUrl() + "', " + obj.getActive()
 					+ " , '" + addedOnDate + "')";
 			String message = (db.executeUpdate(sql) > 0) ? "Category Saved successfully" : "Unable to save category";
 			System.out.println(message);
@@ -75,10 +77,10 @@ public class CategoriesDAO implements DAO<Categories>{
 
 	public void update(Categories obj) {
 		try {
-			SimpleDateFormat format = new SimpleDateFormat("YYYY-MM-DD");
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			String addedOnDate = format.format(obj.getAddedOn());
-			String sql = "update categories set categoryName = '" + obj.getCategoryName() + "', categoryDescription = '"
-					+ obj.getCategoryDescription() + ", categoryImageUrl = '" + obj.getCategoryImageUrl()
+			String sql = "update CATEGORIES set categoryName = '" + obj.getCategoryName() + "', categoryDescription = '"
+					+ obj.getCategoryDescription() + "', categoryImageUrl = '" + obj.getCategoryImageUrl()
 					+ "', active = " + obj.getActive() + " , addedOn = '" + addedOnDate + "' where categoryId = "
 					+ obj.getCategoryId();
 			String message = (db.executeUpdate(sql) > 0) ? "category Updated successfully"
@@ -92,7 +94,7 @@ public class CategoriesDAO implements DAO<Categories>{
 
 	public void delete(long id) {
 		try {
-			String sql = "delete from categories where categoryId = " + id;
+			String sql = "delete from CATEGORIES where categoryId = " + id;
 			String message = (db.executeUpdate(sql) > 0) ? "Category id deleted" : "Category cannot be deleted";
 			System.out.println(message);
 		} catch (Exception e) {

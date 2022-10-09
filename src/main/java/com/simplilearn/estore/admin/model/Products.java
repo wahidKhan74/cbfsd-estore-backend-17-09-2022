@@ -10,7 +10,7 @@ public class Products {
 	private String productDescription;
 	private String productCode;
 	private List<String> images;
-	private int thumnailImage;
+	private int thumbnailImage;
 	private int price;	
 	private Date addedOn;
 	private int rating;
@@ -23,14 +23,14 @@ public class Products {
 
 	// parameterized constructor
 	public Products(int productId, String productTitle, String productDescription, String productCode,
-			List<String> images, int thumnailImage, int price, Date addedOn, int rating) {
+			List<String> images, int thumbnailImage, int price, Date addedOn, int rating) {
 		super();
 		this.productId = productId;
 		this.productTitle = productTitle;
 		this.productDescription = productDescription;
 		this.productCode = productCode;
 		this.images = images;
-		this.thumnailImage = thumnailImage;
+		this.thumbnailImage = thumbnailImage;
 		this.price = price;
 		this.addedOn = addedOn;
 		this.rating = rating;
@@ -77,12 +77,12 @@ public class Products {
 		this.images = images;
 	}
 
-	public int getThumnailImage() {
-		return thumnailImage;
+	public int getThumbnailImage() {
+		return thumbnailImage;
 	}
 
-	public void setThumnailImage(int thumnailImage) {
-		this.thumnailImage = thumnailImage;
+	public void setThumbnailImage(int thumbnailImage) {
+		this.thumbnailImage = thumbnailImage;
 	}
 
 	public int getPrice() {
@@ -113,7 +113,7 @@ public class Products {
 	@Override
 	public String toString() {
 		return "Products [productId=" + productId + ", productTitle=" + productTitle + ", productDescription="
-				+ productDescription + ", productCode=" + productCode + ", images=" + images + ", thumnailImage="
-				+ thumnailImage + ", price=" + price + ", addedOn=" + addedOn + ", rating=" + rating + "]";
+				+ productDescription + ", productCode=" + productCode + ", images=" + images + ", thumbnailImage="
+				+ thumbnailImage + ", price=" + price + ", addedOn=" + addedOn + ", rating=" + rating + "]";
 	}
 }
