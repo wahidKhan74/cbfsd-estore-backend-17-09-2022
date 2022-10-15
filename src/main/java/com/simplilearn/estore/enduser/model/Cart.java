@@ -8,8 +8,7 @@ public class Cart {
 	private int quantity;
 
 	// no argument constructor
-	Cart() {
-	}
+	public Cart() {	}
 
 	// parameterized constructor
 	public Cart(int cartId, int productId, int userId, int quantity) {

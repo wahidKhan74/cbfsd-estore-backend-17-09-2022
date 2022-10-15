@@ -11,6 +11,21 @@
 	],
 	"folders": [
 		{
+			"name": "Carts APIs",
+			"description": "",
+			"collectionId": "1930678e-b085-32e0-fc2f-dc7a8e5d203c",
+			"order": [
+				"8e45642f-27c5-b92b-4efc-f473f734bc11",
+				"02a8afb1-e557-abf1-5ba5-bde0676d1972",
+				"3031193b-e9f0-db0f-d9bc-c987cb1e8129",
+				"cf2a81a9-cf91-2119-faf8-d2edb98d26b2",
+				"d4f41bd3-7e3d-fa89-ea3d-5d12974172da"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"id": "2ae9d51f-8b24-9191-f28d-a212214957cc"
+		},
+		{
 			"name": "Categories",
 			"description": "",
 			"collectionId": "1930678e-b085-32e0-fc2f-dc7a8e5d203c",
@@ -27,12 +42,36 @@
 		}
 	],
 	"folders_order": [
-		"db5b4f19-b5a9-8f60-e403-42401838ad06"
+		"db5b4f19-b5a9-8f60-e403-42401838ad06",
+		"2ae9d51f-8b24-9191-f28d-a212214957cc"
 	],
 	"timestamp": 1665246988853,
 	"owner": 0,
 	"public": false,
 	"requests": [
+		{
+			"id": "02a8afb1-e557-abf1-5ba5-bde0676d1972",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8090/cbfsd-estore-backend-17-09-2022/carts",
+			"folder": "2ae9d51f-8b24-9191-f28d-a212214957cc",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1665850327347,
+			"name": "Get All Carts",
+			"description": "",
+			"collectionId": "1930678e-b085-32e0-fc2f-dc7a8e5d203c",
+			"responses": []
+		},
 		{
 			"id": "03f155b1-6086-480c-4eb1-c6efa33c1d23",
 			"headers": "",
@@ -153,6 +192,37 @@
 			"helperAttributes": {},
 			"time": 1665327586998,
 			"name": "Add Product",
+			"description": "",
+			"collectionId": "1930678e-b085-32e0-fc2f-dc7a8e5d203c",
+			"responses": []
+		},
+		{
+			"id": "3031193b-e9f0-db0f-d9bc-c987cb1e8129",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8090/cbfsd-estore-backend-17-09-2022/carts?id=2",
+			"folder": "2ae9d51f-8b24-9191-f28d-a212214957cc",
+			"queryParams": [
+				{
+					"key": "id",
+					"value": "2",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1665850971113,
+			"name": "Get One Carts",
 			"description": "",
 			"collectionId": "1930678e-b085-32e0-fc2f-dc7a8e5d203c",
 			"responses": []
@@ -303,6 +373,51 @@
 			"helperAttributes": {}
 		},
 		{
+			"id": "8e45642f-27c5-b92b-4efc-f473f734bc11",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8090/cbfsd-estore-backend-17-09-2022/carts?userId=1&productId=1&quantity=5",
+			"folder": "2ae9d51f-8b24-9191-f28d-a212214957cc",
+			"queryParams": [
+				{
+					"key": "userId",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "productId",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "quantity",
+					"value": "5",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1665850627332,
+			"name": "Create a Cart",
+			"description": "",
+			"collectionId": "1930678e-b085-32e0-fc2f-dc7a8e5d203c",
+			"responses": []
+		},
+		{
 			"id": "91632a2d-1fa3-0493-1169-9d932b93772e",
 			"headers": "",
 			"headerData": [],
@@ -388,6 +503,89 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {}
+		},
+		{
+			"id": "cf2a81a9-cf91-2119-faf8-d2edb98d26b2",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8090/cbfsd-estore-backend-17-09-2022/carts?cartId=2&productId=3&userId=1&quantity=10",
+			"folder": "2ae9d51f-8b24-9191-f28d-a212214957cc",
+			"queryParams": [
+				{
+					"key": "cartId",
+					"value": "2",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "productId",
+					"value": "3",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "userId",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "quantity",
+					"value": "10",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1665850994706,
+			"name": "Update Carts",
+			"description": "",
+			"collectionId": "1930678e-b085-32e0-fc2f-dc7a8e5d203c",
+			"responses": []
+		},
+		{
+			"id": "d4f41bd3-7e3d-fa89-ea3d-5d12974172da",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8090/cbfsd-estore-backend-17-09-2022/carts?id=2",
+			"folder": "2ae9d51f-8b24-9191-f28d-a212214957cc",
+			"queryParams": [
+				{
+					"key": "id",
+					"value": "2",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1665851029266,
+			"name": "Delete Carts",
+			"description": "",
+			"collectionId": "1930678e-b085-32e0-fc2f-dc7a8e5d203c",
+			"responses": []
 		},
 		{
 			"id": "f275757f-5a93-a390-e9eb-a92e74d2b62c",
